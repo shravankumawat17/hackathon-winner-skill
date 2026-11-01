@@ -1,0 +1,14 @@
+sequenceDiagram
+  participant J as Judge
+  participant UI as Web UI
+  participant API
+  participant AG as Agent core
+  participant LLM as LLM chain
+  J->>UI: click prefilled example
+  UI->>API: POST /run
+  API->>AG: plan + tools
+  AG->>LLM: prompt
+  LLM-->>AG: structured output
+  AG-->>API: result + trace
+  API-->>UI: stream
+  UI-->>J: result, citations, metrics

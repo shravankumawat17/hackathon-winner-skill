@@ -1,0 +1,8 @@
+flowchart LR
+  SRC[Sources] -->|ingest| CH[Chunk + clean]
+  CH -->|embed| VDB[(Vector + metadata)]
+  Q[Query] -->|embed| RET[Retriever top-k]
+  VDB --> RET
+  RET -->|context + citations| GEN[Generator]
+  GEN -->|validated JSON| UI[UI with citations]
+  GEN -. trace .-> EV[Eval + trace log]

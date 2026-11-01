@@ -1,0 +1,6 @@
+{
+  "name": "hackathon-winner",
+  "description": "Technical hackathon-winning copilot for students: live research, GO/PIVOT/NO-GO verdicts, architecture, stack, UI, harness, timeline, deployment and demo engineering on a student budget.",
+  "version": "1.0.0",
+  "license": "MIT"
+}

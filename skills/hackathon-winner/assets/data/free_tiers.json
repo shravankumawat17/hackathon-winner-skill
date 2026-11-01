@@ -1,0 +1,48 @@
+{
+  "_readme": "SNAPSHOT, not truth. Compiled from secondary sources found while building this skill. Free tiers change monthly. Re-verify on the official page before relying on any number. Update snapshot_date only after re-verifying.",
+  "snapshot_date": "2026-11-01",
+  "providers": {
+    "groq": {
+      "rpm": 30, "rpd": 1000, "tpm": 8000, "tpd": 200000,
+      "confidence": "medium",
+      "notes": "Per-model limits, counted per organization (not per key). Example model: gpt-oss-120b. Some signup flows require phone verification.",
+      "official": "https://console.groq.com/docs/rate-limits",
+      "sources": ["dev.to 'Free LLM API Tiers in October 2026'", "novita.ai free LLM API comparison 2026", "openrouter.ai free LLM APIs compared"]
+    },
+    "openrouter_free": {
+      "rpm": 20, "rpd": 50,
+      "confidence": "medium",
+      "notes": "Free-model variants only. 50/day without purchased credits; reported 1,000/day after $10 lifetime credits. Capacity governed globally, extra accounts do not help. Free providers may log prompts. ToS reportedly prohibits reselling access or building a competing service.",
+      "official": "https://openrouter.ai/docs/api-reference/limits",
+      "sources": ["openrouter.ai blog tutorials", "dev.to October 2026", "freellmapihub wiki (ToS note, Jul 2026)"]
+    },
+    "gemini_api_free": {
+      "rpm": null, "rpd": null,
+      "confidence": "low-medium",
+      "notes": "Vendor no longer publishes per-model free limits publicly; check AI Studio for your project's active numbers. Limits per project, not per key. Search grounding reportedly needs billing. Free-tier prompts may be used to improve products (not in EEA/UK/CH). Since the 2026-03-23 terms, reportedly only paid services may serve end users in EEA/CH/UK.",
+      "official": "https://ai.google.dev/gemini-api/docs/rate-limits",
+      "sources": ["dev.to October 2026", "freellmapihub wiki", "xyzs996/free-llm-api discussion"]
+    },
+    "nvidia_nim": {
+      "rpm": null, "rpd": 10000,
+      "confidence": "low",
+      "notes": "A single source reports ~10,000 requests/day per model; signup may be gated by phone verification. Verify before depending on it.",
+      "official": "https://build.nvidia.com",
+      "sources": ["dev.to October 2026", "freellmapihub wiki"]
+    },
+    "cloudflare_workers_ai": {
+      "rpm": null, "rpd": null,
+      "confidence": "medium",
+      "notes": "Reported 10,000 'Neurons'/day free allowance (unit is not requests). Check model pricing in neurons.",
+      "official": "https://developers.cloudflare.com/workers-ai/platform/pricing/",
+      "sources": ["mnfst/awesome-free-llm-apis wiki"]
+    },
+    "github_models": {
+      "rpm": null, "rpd": null,
+      "confidence": "low",
+      "notes": "Reported as closed to new users on 2026-07-30 by one source and removed from another list; treat as unavailable until verified.",
+      "official": "https://docs.github.com/en/github-models",
+      "sources": ["xyzs996/free-llm-api discussion", "ShaikhWarsi/free-ai-tools changelog"]
+    }
+  }
+}

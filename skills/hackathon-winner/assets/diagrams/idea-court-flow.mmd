@@ -1,0 +1,14 @@
+flowchart TD
+  A[Idea] --> G1{Demo in 3 min?}
+  G1 -- no --> N[NO-GO + replacement]
+  G1 -- yes --> G2{Feasible in 60% of time?}
+  G2 -- no --> N
+  G2 -- yes --> G3{New part vs prior art?}
+  G3 -- no --> P[PIVOT: add wedge]
+  G3 -- yes --> G4{Free tier survives demo day?}
+  G4 -- no --> P
+  G4 -- yes --> G5{Rules and terms OK?}
+  G5 -- no --> N
+  G5 -- yes --> S[Score >= 75?]
+  S -- yes --> GO[GO]
+  S -- no --> P

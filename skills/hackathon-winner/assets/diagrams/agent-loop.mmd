@@ -1,0 +1,10 @@
+flowchart TD
+  IN[Input / trigger] --> PLAN[Planner]
+  PLAN --> ACT[Tool executor]
+  ACT --> VAL{Schema + sanity valid?}
+  VAL -- no --> RETRY[Repair, bounded retries]
+  RETRY --> ACT
+  VAL -- yes --> MEM[(State)]
+  MEM --> DONE{Goal met or budget hit?}
+  DONE -- no --> PLAN
+  DONE -- yes --> OUT[Result + trace]

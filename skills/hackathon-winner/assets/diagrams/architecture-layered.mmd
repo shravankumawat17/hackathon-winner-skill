@@ -1,0 +1,12 @@
+flowchart LR
+  classDef ext fill:#eef,stroke:#446
+  classDef ai fill:#efe,stroke:#464
+  classDef data fill:#fee,stroke:#644
+  U[User] --> FE[Web UI]
+  FE -->|HTTPS/SSE| API[API server]
+  API -->|SQL| DB[(App DB)]:::data
+  API --> AG[Agent core]:::ai
+  AG -->|HTTPS| LLM[LLM provider chain]:::ext
+  AG -->|embeddings| VDB[(Vector store)]:::data
+  AG -->|tool calls| EXT[External APIs]:::ext
+  AG -. trace .-> LOG[Trace log]

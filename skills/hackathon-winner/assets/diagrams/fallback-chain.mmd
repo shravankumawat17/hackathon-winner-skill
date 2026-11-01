@@ -1,0 +1,11 @@
+flowchart LR
+  R[Request] --> C{Cache hit?}
+  C -- yes --> OUT[Response]
+  C -- no --> P1[Primary provider]
+  P1 -- ok --> OUT
+  P1 -- 429/timeout --> P2[Secondary provider]
+  P2 -- ok --> OUT
+  P2 -- fail --> LOC[Local small model]
+  LOC -- ok --> OUT
+  LOC -- fail --> REP[Replay recorded response, labeled]
+  REP --> OUT
